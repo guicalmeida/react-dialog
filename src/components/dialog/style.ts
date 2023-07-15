@@ -4,7 +4,9 @@ const Backdrop = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #000000cc;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left:0;
   z-index: 1000;
 `;
 
