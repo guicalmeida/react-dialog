@@ -18,33 +18,36 @@ export default function Dialog({
   title,
 }: DialogProps) {
   useEffect(() => {
-    const handleEsc = (event: KeyboardEvent) => {
-      if (event.code === "Escape") {
-        onClose();
-      }
-    };
+    if (isOpen) {
+      const handleEsc = (event: KeyboardEvent) => {
+        if (event.code === "Escape") {
+          onClose();
+        }
+      };
 
-    window.addEventListener("keydown", handleEsc);
+      window.addEventListener("keydown", handleEsc);
 
-    return () => {
-      window.removeEventListener("keydown", handleEsc);
-    };
-  }, [onClose]);
+      return () => {
+        window.removeEventListener("keydown", handleEsc);
+      };
+    }
+  }, [isOpen, onClose]);
+  if (!isOpen) {
+    return null;
+  }
 
   return (
-    isOpen && (
-      <>
-        <Backdrop onClick={() => closeOnOverlayClick && onClose()}></Backdrop>
-        <DialogContainer>
-          <Header>
-            <h1>{title}</h1>
-            <button onClick={() => onClose()}>
-              <img src={CloseIcon} alt="Ícone de fechar" />
-            </button>
-          </Header>
-          <Body>{children}</Body>
-        </DialogContainer>
-      </>
-    )
+    <>
+      <Backdrop onClick={() => closeOnOverlayClick && onClose()}></Backdrop>
+      <DialogContainer>
+        <Header>
+          <h1>{title}</h1>
+          <button onClick={() => onClose()}>
+            <img src={CloseIcon} alt="Ícone de fechar" />
+          </button>
+        </Header>
+        {children && <Body>{children}</Body>}
+      </DialogContainer>
+    </>
   );
 }
