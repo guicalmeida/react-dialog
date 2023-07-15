@@ -17,4 +17,11 @@ const ButtonContainer = styled.div`
   margin: 24px;
 `;
 
-export { TestButton, ButtonContainer };
+const RelativeParent = styled.div`
+  position: relative;
+  height: 100px;
+  width: 100px;
+  margin: 80px;
+`;
+
+export { TestButton, ButtonContainer, RelativeParent };

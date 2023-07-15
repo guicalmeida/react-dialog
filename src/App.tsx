@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Dialog from "./components/dialog/dialog";
-import { TestButton, ButtonContainer } from "./style";
+import { TestButton, ButtonContainer, RelativeParent } from "./style";
 
 function App() {
   const [openFullContent, setOpenFullContent] = useState(false);
   const [openLowContent, setOpenLowContent] = useState(false);
   const [openNoContent, setOpenNoContent] = useState(false);
+  const [openRelativeParent, setOpenRelativeParent] = useState(false);
   return (
     <>
       <ButtonContainer>
@@ -17,6 +18,9 @@ function App() {
         </TestButton>
         <TestButton onClick={() => setOpenNoContent(true)}>
           No content example
+        </TestButton>
+        <TestButton onClick={() => setOpenRelativeParent(true)}>
+          Relative parent example
         </TestButton>
       </ButtonContainer>
 
@@ -61,6 +65,14 @@ function App() {
         title="No Content Dialog"
         onClose={() => setOpenNoContent(false)}
       />
+      <RelativeParent>
+        <Dialog
+          closeOnOverlayClick
+          isOpen={openRelativeParent}
+          title="Relative Parent Dialog"
+          onClose={() => setOpenRelativeParent(false)}
+        />
+      </RelativeParent>
     </>
   );
 }
