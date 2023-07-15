@@ -1,6 +1,6 @@
 import { ReactNode, useEffect } from "react";
 import CloseIcon from "./closeIcon.svg";
-import { Backdrop, Body, DialogContainer, Header } from "./style";
+import { Backdrop, Body, DialogContainer, Header, ModalContainer } from "./style";
 
 type DialogProps = {
   title?: string;
@@ -37,7 +37,7 @@ export default function Dialog({
   }
 
   return (
-    <>
+    <ModalContainer>
       <Backdrop onClick={() => closeOnOverlayClick && onClose()}></Backdrop>
       <DialogContainer>
         <Header>
@@ -48,6 +48,6 @@ export default function Dialog({
         </Header>
         {children && <Body>{children}</Body>}
       </DialogContainer>
-    </>
+    </ModalContainer>
   );
 }

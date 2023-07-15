@@ -1,12 +1,17 @@
 import { styled } from "styled-components";
 
-const Backdrop = styled.div`
+const ModalContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: #000000cc;
-  position: absolute;
   top: 0;
-  left:0;
+  left: 0;
+  position: fixed;
+`;
+
+const Backdrop = styled.div`
+  height: 100%;
+  width: 100%;
+  background-color: #000000cc;
   z-index: 1000;
 `;
 
@@ -51,4 +56,4 @@ const Body = styled.div`
   }
 `;
 
-export { Backdrop, Body, DialogContainer, Header };
+export { Backdrop, Body, DialogContainer, Header, ModalContainer };
