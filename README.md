@@ -1,6 +1,8 @@
 # Desafio Lemon Energia - Componente Dialog
 
-Este projeto implementa um componente de dialog desenvolvido com React, Vite, Styled Components e Vitest para os testes. O componente Dialog fornece uma sobreposição modal com duas camadas: uma cobre toda a tela e impede a interação com o conteúdo oculto, e a outra camada exibe o conteúdo.
+Este projeto implementa um componente de dialog desenvolvido com React, Vite, Styled Components e Vitest para os testes. O componente Dialog foi concebido para funcionar em telas de celular, não sendo pensado para outros breakpoints, conforme o detalhamento do desafio. Ele fornece uma sobreposição modal com duas camadas: uma cobre toda a tela e impede a interação com o conteúdo oculto, e a outra camada exibe o conteúdo.
+
+
 
 
 
