@@ -93,7 +93,7 @@ O componente Dialog funciona da seguinte maneira:
 
 ## Conclusão
 
-Este diálogo foi desenvolvido ao longo do fim de semana e espero que esta implementação esteja alinhada com as expectativas e os padrões de qualidade da Lemon.
+Este dialog foi desenvolvido ao longo do fim de semana e espero que esta implementação esteja alinhada com as expectativas e os padrões de qualidade da Lemon.
 
 Tenho acompanhado a empresa desde que a descobri no início do ano e tenho um interesse genuíno não apenas em seu produto e linha de atuação, mas também em sua cultura como um todo.
 
