@@ -38,11 +38,11 @@ export default function Dialog({
 
   return (
     <ModalContainer>
-      <Backdrop onClick={() => closeOnOverlayClick && onClose()}></Backdrop>
+      <Backdrop onClick={() => closeOnOverlayClick && onClose()} data-testid="backdrop"></Backdrop>
       <DialogContainer>
         <Header>
           <h1>{title}</h1>
-          <button onClick={() => onClose()}>
+          <button onClick={() => onClose()} aria-label="fechar">
             <img src={CloseIcon} alt="Ícone de fechar" />
           </button>
         </Header>
