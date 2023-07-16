@@ -1,6 +1,12 @@
 import { ReactNode, useEffect } from "react";
 import CloseIcon from "./closeIcon.svg";
-import { Backdrop, Body, DialogContainer, Header, ModalContainer } from "./style";
+import {
+  Backdrop,
+  Body,
+  DialogContainer,
+  Header,
+  ModalContainer,
+} from "./style";
 
 type DialogProps = {
   title?: string;
@@ -32,13 +38,13 @@ export default function Dialog({
       };
     }
   }, [isOpen, onClose]);
-  if (!isOpen) {
-    return null;
-  }
 
-  return (
+  return isOpen ? (
     <ModalContainer>
-      <Backdrop onClick={() => closeOnOverlayClick && onClose()} data-testid="backdrop"></Backdrop>
+      <Backdrop
+        onClick={() => closeOnOverlayClick && onClose()}
+        data-testid="backdrop"
+      ></Backdrop>
       <DialogContainer>
         <Header>
           <h1>{title}</h1>
@@ -49,5 +55,5 @@ export default function Dialog({
         {children && <Body>{children}</Body>}
       </DialogContainer>
     </ModalContainer>
-  );
+  ) : null;
 }
