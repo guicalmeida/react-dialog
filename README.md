@@ -15,7 +15,7 @@ To install the project and its dependencies, follow these steps:
 2. Navigate to the project directory:
 
    ```bash
-   cd lemon-dialog
+   cd react-dialog
    ```
 
 3. Install the dependencies using npm:
