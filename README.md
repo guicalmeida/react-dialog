@@ -1,44 +1,40 @@
-# Desafio Lemon Energia - Componente Dialog
+# Lemon Energia Challenge - Dialog Component
 
-Este projeto implementa um componente de dialog desenvolvido com React, Vite, Styled Components e Vitest para os testes. O componente Dialog foi concebido para funcionar em telas de celular, não sendo pensado para outros breakpoints, conforme o detalhamento do desafio. Ele fornece uma sobreposição modal com duas camadas: uma cobre toda a tela e impede a interação com o conteúdo oculto, e a outra camada exibe o conteúdo.
+This project implements a dialog component developed with React, Vite, Styled Components, and Vitest for testing purposes. The Dialog component is designed to work on mobile screens and is not intended for other breakpoints, as detailed in the challenge. It provides a modal overlay with two layers: one covers the entire screen and prevents interaction with the hidden content, and the other layer displays the content.
 
+## Installation
 
+To install the project and its dependencies, follow these steps:
 
-
-
-## Instalação
-
-Para instalar o projeto e suas dependências, siga estes passos:
-
-1. Clone o repositório:
+1. Clone the repository:
 
    ```bash
    git clone <repository-url>
    ```
 
-2. Acesse o diretório do projeto:
+2. Navigate to the project directory:
 
    ```bash
    cd lemon-dialog
    ```
 
-3. Instale as dependências usando o npm:
+3. Install the dependencies using npm:
 
    ```bash
    npm install
    ```
 
-## Uso
+## Usage
 
-Para utilizar o componente Dialog, siga estes passos:
+To use the Dialog component, follow these steps:
 
-1. Importe o componente Dialog para seu arquivo:
+1. Import the Dialog component into your file:
 
    ```jsx
    import Dialog from './components/Dialog';
    ```
 
-2. Utilize o componente Dialog em seu código:
+2. Use the Dialog component in your code:
 
    ```jsx
    const [isOpen, setIsOpen] = useState(false);
@@ -52,53 +48,43 @@ Para utilizar o componente Dialog, siga estes passos:
    <Dialog
      isOpen={isOpen}
      onClose={handleClose}
-     title="Meu dialog"
+     title="My dialog"
      closeOnOverlayClick={true}
    >
-     {/* Conteúdo vai aqui */}
+     {/* Content goes here */}
    </Dialog>
    ```
 
-   Certifique-se de criar um estado (`isOpen`) para controlar a abertura e fechamento do Dialog. A função `handleClose` será responsável por atualizar o estado para fechar o Dialog.
+   Make sure to create a state (`isOpen`) to control the opening and closing of the Dialog. The `handleClose` function will be responsible for updating the state to close the Dialog.
 
-3. Substitua `handleClose` pela função apropriada para lidar com o evento de fechamento.
+3. Replace `handleClose` with the appropriate function to handle the closing event.
 
-## Exemplos de Uso
+## Usage Examples
 
-Já existem 4 exemplos de uso do Dialog implementados no arquivo `App.tsx`:
-- Com conteúdo suficiente para que seja necessário rolar a tela;
-- com pouco conteúdo e tamanho do dialog de acordo;
-- sem conteúdo;
-- Dentro de um parent com a estilização `position: relative`; 
+There are already 4 usage examples of the Dialog implemented in the `App.tsx` file:
+- With enough content to require scrolling;
+- With little content and the dialog size accordingly;
+- Without content;
+- Within a parent with the `position: relative` styling;
 
 ## Props
 
-O componente Dialog aceita as seguintes props:
+The Dialog component accepts the following props:
 
-- `title` (string, opcional): O conteúdo a ser exibido na parte superior do Dialog.
-- `isOpen` (booleano, obrigatório): Especifica se o Dialog está aberto (`true`) ou fechado (`false`).
-- `onClose` (função, obrigatória): Função de retorno de chamada a ser invocada sempre que o Dialog for fechado.
-- `closeOnOverlayClick` (booleano, obrigatório): Quando definido como `true`, permite que o Dialog seja fechado quando o usuário clicar na camada de sobreposição.
-- `children` (ReactNode, opcional): O conteúdo do Dialog.
+- `title` (string, optional): The content to be displayed at the top of the Dialog.
+- `isOpen` (boolean, required): Specifies whether the Dialog is open (`true`) or closed (`false`).
+- `onClose` (function, required): Callback function to be invoked whenever the Dialog is closed.
+- `closeOnOverlayClick` (boolean, required): When set to `true`, allows the Dialog to be closed when the user clicks on the overlay layer.
+- `children` (ReactNode, optional): The content of the Dialog.
 
-## Funcionalidade
+## Functionality
 
-O componente Dialog funciona da seguinte maneira:
+The Dialog component works as follows:
 
-- Ele possui duas camadas, sendo que a camada superior ocupa toda a tela e a camada inferior exibe o conteúdo.
-- O Dialog apresenta seu conteúdo até uma certa altura na tela. Se o conteúdo exceder essa altura, o comportamento de rolagem será aplicado ao corpo do Dialog.
-- A visibilidade do Dialog é controlada pela prop `isOpen`, de forma que o componente sequer é renderizado se não for `true`.
-- A função de retorno de chamada `onClose` é invocada sempre que o usuário realiza uma ação que fecha o Dialog:
-  - Clicar no botão de fechar
-  - Clicar na camada de sobreposição se a prop `closeOnOverlayClick` estiver definida como `true`.
-  - Pressionar a tecla ESC.
-
-## Conclusão
-
-Este dialog foi desenvolvido ao longo do fim de semana e espero que esta implementação esteja alinhada com as expectativas e os padrões de qualidade da Lemon.
-
-Tenho acompanhado a empresa desde que a descobri no início do ano e tenho um interesse genuíno não apenas em seu produto e linha de atuação, mas também em sua cultura como um todo.
-
-Li o guia de cultura, o FAQ do processo seletivo e o Design Definition Document da Lemon elaborado pelo Luciano e disponível em seu LinkedIn. Portanto, considero que participar deste processo é uma decisão cuidadosamente considerada. Essa pesquisa me permitiu compreender claramente o que esperar em termos de cultura e desafios de negócio, além de me identificar com a filosofia e os valores da Lemon. Estou verdadeiramente empolgado com a oportunidade de contribuir para seu sucesso. 
-
-Aguardo ansiosamente o retorno!
+- It has two layers, where the top layer covers the entire screen and the bottom layer displays the content.
+- The Dialog displays its content up to a certain height on the screen. If the content exceeds this height, scrolling behavior is applied to the Dialog body.
+- The visibility of the Dialog is controlled by the `isOpen` prop, so the component is not even rendered if it is not `true`.
+- The `onClose` callback function is invoked whenever the user performs an action that closes the Dialog:
+  - Clicking on the close button
+  - Clicking on the overlay layer if the `closeOnOverlayClick` prop is set to `true`.
+  - Pressing the ESC key.
