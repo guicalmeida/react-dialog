@@ -1,4 +1,4 @@
-# Lemon Energia Challenge - Dialog Component
+# Coding Challenge - Dialog Component
 
 This project implements a dialog component developed with React, Vite, Styled Components, and Vitest for testing purposes. The Dialog component is designed to work on mobile screens and is not intended for other breakpoints, as detailed in the coding challenge that originnated this code. It provides a modal overlay with two layers: one covers the entire screen and prevents interaction with the hidden content, and the other layer displays the content.
 
